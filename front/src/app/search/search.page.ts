@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PetsittersService } from '../service/petsitters.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss']
 })
-export class SearchPage {
+export class SearchPage implements OnInit {
 
-  constructor() {}
+  constructor(public petsittersService: PetsittersService) {}
 
+  ngOnInit(): void {
+    this.getPetsitters();
+  }
+
+  public getPetsitters(): any {
+    this.petsittersService.getAll();
+  }
 }
