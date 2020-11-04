@@ -6,12 +6,13 @@ export class RestService {
 
   constructor(protected http: HttpClient) {}
 
-  public getAll(): any {
-    this.http.get(this.baseUrl).subscribe(data => {
-      console.log(data);
-    }, err => {
-      console.log(err);
-    });
+  public getAll(type: string = 'dog'): Promise<any> {
+
+    return this.http.get(this.baseUrl, {
+      params: {
+        type,
+      }
+    }).toPromise();
   }
 
   protected setBaseUrl(url: string): void {
