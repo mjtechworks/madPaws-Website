@@ -2,16 +2,8 @@
 require_once "../config.php";
 require_once 'database.php';
 
-
 class PetsitterRepository
 {
-  public $database;
-
-  public function __construct()
-  {
-    $database = new Database();
-    $this->database = $database::getInstance()->getConnection();
-  }
 
   public function search($type)
   {
@@ -20,11 +12,12 @@ class PetsitterRepository
       FROM user
       INNER JOIN petsitter_pet 
       ON user.id = petsitter_pet.user_id
-      AND petsitter_pet.type ="'.$type.'"
+      AND petsitter_pet.type = :petsitter_pet
       AND user.role = "petsitter"
     ';
 
-    $stmt = $this->database->prepare($sql);
+    $stmt = Database::getInstance()->getConnection()->prepare($sql);
+    $stmt->bindParam(':petsitter_pet', $type, PDO::PARAM_STR);
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

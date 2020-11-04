@@ -3,14 +3,17 @@
 require_once "./apiResponse.php";
 require_once "../lib/petsitterRepository.php";
 
-$petsitterRepository = new PetsitterRepository();
+if (isset($_GET['type'])) {
+  $type = ($_GET['type']);
+}
+if (isset($_GET['service'])) {
+  $services = ($_GET['service']);
+}
 
 // $petsitters = Database::getInstance()->getAll('user', [
 //   'role' => 'petsitter'
 //   ]);
 // ApiResponse::render($petsitters);
 
-$petsitterForDogs = $petsitterRepository->search('chat');
-echo "<pre>"; 
-var_dump($petsitterForDogs);
-echo "</pre>";
+$searchPetsitters = PetsitterRepository::search($type);
+ApiResponse::render($searchPetsitters);

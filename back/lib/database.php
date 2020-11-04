@@ -6,7 +6,7 @@ class Database
 
   private $conn;
 
-  public function __construct()
+  private function __construct()
   {
     $this->connect();
   }
@@ -24,7 +24,7 @@ class Database
     return self::$instance = new self();
   }
 
-  public function connect()
+  private function connect()
   {
     try {
       $this->conn = new PDO(DATABASE_DSN, DATABASE_USER, DATABASE_PASS);
