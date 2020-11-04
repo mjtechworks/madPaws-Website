@@ -1,0 +1,10 @@
+<ion-card>
+  <ion-card-content>
+    <ion-list *ngFor="let item of services">
+      <a routerLink="/" [queryParams]="{service: item.name}">
+        <app-option-card name='{{item.name}}' icon='{{item.icon}}'></app-option-card>
+      </a>
+    </ion-list>
+    <ion-button class="routing" (click)="goToSearch()">Go To Search</ion-button>
+  </ion-card-content>
+</ion-card>

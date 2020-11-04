@@ -1,15 +1,16 @@
 <?php 
 
-require_once "../config.php";
-require_once "../lib/database.php";
 require_once "./apiResponse.php";
+require_once "../lib/petsitterRepository.php";
 
-$petsitters = Database::getInstance()->getAll('user', [
-  'role' => 'petsitter'
-  ]);
+$petsitterRepository = new PetsitterRepository();
 
+// $petsitters = Database::getInstance()->getAll('user', [
+//   'role' => 'petsitter'
+//   ]);
+// ApiResponse::render($petsitters);
+
+$petsitterForDogs = $petsitterRepository->search('chat');
 echo "<pre>"; 
-var_dump($petsitters);
+var_dump($petsitterForDogs);
 echo "</pre>";
-
-ApiResponse::render($petsitters);
