@@ -9,6 +9,6 @@ export class PetsittersService extends RestService {
 
   public constructor(protected http: HttpClient) {
     super(http);
-    this.setBaseUrl('/api/petsitters.php');
+    this.setBaseUrl('/api/petsitter.php');
   }
 }

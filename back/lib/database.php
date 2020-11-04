@@ -6,36 +6,46 @@ class Database
 
   private $conn;
 
-  private function __construct()
+  public function __construct()
   {
     $this->connect();
   }
 
   /**
-   * Pour etre sur d'en avoir qu'une
+   * Pour etre sûre d'en avoir qu'une
    */
   public static function getInstance()
   {
     if (self::$instance) {
+
       return self::$instance;
     }
 
     return self::$instance = new self();
   }
 
-  private function connect()
+  public function connect()
   {
     try {
       $this->conn = new PDO(DATABASE_DSN, DATABASE_USER, DATABASE_PASS);
+
     } catch (PDOException $e) {
       echo 'Connexion échouée : ' . $e->getMessage();
     }
-  
+
     return $dbh;
   }
 
+  public function getConnection()
+  {
+    return $this->conn;
+  }
+
   /**
-   * Liste tous les elements de la table 
+   * table list and if conditional WHERE
+   * Database::getInstance()->getAll('$table', [
+   *'$col' => '$value'
+   * ]); 
    */
   public function getAll(string $tableName, array $whereConditions = []) : array
   {
