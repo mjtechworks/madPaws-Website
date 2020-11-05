@@ -1,6 +1,7 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { SearchToolbarComponent } from '../components/search-toolbar/search-toolbar.component';
 import { PetsittersService } from '../service/petsitters.service';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-landing',
@@ -11,14 +12,18 @@ export class LandingPage {
   @ViewChild(SearchToolbarComponent) searchToolbar;
 
   public users = [];
-
-  public title =  'We care for your pet';
+  public notFoundMessage: string;
 
   constructor(public petsittersService: PetsittersService) {}
 
-  public findSearchResults() {
+  public findSearchResults(): void {
     this.petsittersService.getAll(this.searchToolbar.queryParams).then((data: any) => {
       this.users = data;
+
+      if (!this.users.length) {
+        this.notFoundMessage = 'No users found';
+      }
+
       console.warn('data', this.users, '===RESULTS===', this.searchToolbar.queryParams);
     });
   }

@@ -3,6 +3,7 @@
 .intro-text {
   font-size: 16px;
   line-height: 1.5;
+
   h1 {
     font-size: 4rem;
     color: #000;
@@ -18,7 +19,7 @@
 }
 .background-header {
   background-color: $low-grey-3;
-  padding-top: 10rem;
+  padding-top: 5rem;
 
   .img-fluid {
     max-width: 100%;
@@ -26,6 +27,6 @@
   }
 
   app-search-toolbar {
-    margin-top: 3rem;
+    margin: auto 3rem;
   }
 }
