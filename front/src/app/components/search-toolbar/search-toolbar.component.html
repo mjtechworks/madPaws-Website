@@ -1,7 +1,7 @@
 <ion-card>
   <ion-card-content>
     <ion-list *ngFor="let item of services">
-      <a routerLink="/" [queryParams]="{service: item.name}">
+      <a routerLink="/tabs/landing" [queryParams]="{params: item.name}" (click)="test()">
         <app-option-card name='{{item.name}}' icon='{{item.icon}}'></app-option-card>
       </a>
     </ion-list>

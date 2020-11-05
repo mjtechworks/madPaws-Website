@@ -15,13 +15,8 @@ export class SearchPage implements OnInit {
   }
 
   public getPetsitters(): any {
-    this.petsittersService.getAll().then((data: any) => {
+    this.petsittersService.getAll('dog').then((data: any) => {
       console.log('data', data);
     });
-    // .subscribe(data => {
-    //   console.warn('data', data);
-    // }, err => {
-    //   console.log('ERROR', err);
-    // });
   }
 }
