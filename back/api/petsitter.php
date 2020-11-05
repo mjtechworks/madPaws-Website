@@ -7,7 +7,7 @@ if (isset($_GET['type'])) {
   $type = ($_GET['type']);
 }
 if (isset($_GET['service'])) {
-  $services = ($_GET['service']);
+  $service = ($_GET['service']);
 }
 
 // $petsitters = Database::getInstance()->getAll('user', [
@@ -15,5 +15,5 @@ if (isset($_GET['service'])) {
 //   ]);
 // ApiResponse::render($petsitters);
 
-$searchPetsitters = PetsitterRepository::search($type);
+$searchPetsitters = PetsitterRepository::search($type, $service);
 ApiResponse::render($searchPetsitters);
