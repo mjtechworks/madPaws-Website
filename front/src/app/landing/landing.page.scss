@@ -1,1 +1,31 @@
+@import '../styles/variables';
 
+.intro-text {
+  font-size: 16px;
+  line-height: 1.5;
+  h1 {
+    font-size: 4rem;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  p{
+    color: #999999;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+}
+.background-header {
+  background-color: $low-grey-3;
+  padding-top: 10rem;
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  app-search-toolbar {
+    margin-top: 3rem;
+  }
+}

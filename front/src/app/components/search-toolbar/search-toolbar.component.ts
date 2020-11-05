@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PetsittersService } from 'src/app/service/petsitters.service';
 
@@ -7,8 +7,11 @@ import { PetsittersService } from 'src/app/service/petsitters.service';
   templateUrl: './search-toolbar.component.html',
   styleUrls: ['./search-toolbar.component.scss'],
 })
-export class SearchToolbarComponent implements OnInit {
-  public queryParams;
+export class SearchToolbarComponent {
+  @Output() public search: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
+  public queryParams = {};
+
+  public data: any;
 
   public services: Array<any> = [
     {
@@ -37,7 +40,7 @@ export class SearchToolbarComponent implements OnInit {
     },
     {
       name: 'Pet Day Care',
-      icon: 'home-outline',
+      icon: 'dice-outline',
       param: 'service',
       option: 'pet-day-care',
     },
@@ -84,14 +87,6 @@ export class SearchToolbarComponent implements OnInit {
       this.activeRoute.queryParams.subscribe(params => {
         this.queryParams = params;
         console.log('params', this.queryParams);
-    });
-  }
-
-  ngOnInit() {}
-
-  public goToSearch() {
-    this.petsittersService.getAll(this.queryParams).then((data: any) => {
-      console.warn('data', data, '===RESULTS===', this.queryParams);
     });
   }
 

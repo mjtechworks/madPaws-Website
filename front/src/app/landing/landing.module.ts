@@ -6,6 +6,7 @@ import { LandingPage } from './landing.page';
 
 import { LandingPageRoutingModule } from './landing-routing.module';
 import { SearchToolbarModule } from '../components/search-toolbar/search-toolbar.module';
+import { UserCardModule } from '../components/user-card/user-card.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { SearchToolbarModule } from '../components/search-toolbar/search-toolbar
     FormsModule,
     SearchToolbarModule,
     LandingPageRoutingModule,
-    SearchToolbarModule
+    SearchToolbarModule,
+    UserCardModule
   ],
   declarations: [LandingPage]
 })
