@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PetsittersService } from 'src/app/service/petsitters.service';
 
 @Component({
@@ -13,20 +13,72 @@ export class SearchToolbarComponent implements OnInit {
   public services: Array<any> = [
     {
       name: 'Pet Sitting',
-      icon: 'home-outline'
+      icon: 'home-outline',
+      param: 'service',
+      option: 'pet-sitting'
     },
     {
       name: 'Pet Hosting',
-      icon: 'home-outline'
+      icon: 'home-outline',
+      param: 'service',
+      option: 'pet-hosting'
     },
     {
       name: 'Dog Walking',
-      icon: 'home-outline'
+      icon: 'home-outline',
+      param: 'service',
+      option: 'dog-walking',
+    },
+    {
+      name: 'House Visiting',
+      icon: 'home-outline',
+      param: 'service',
+      option: 'house-visiting',
+    },
+    {
+      name: 'Pet Day Care',
+      icon: 'home-outline',
+      param: 'service',
+      option: 'pet-day-care',
+    },
+    {
+      name: 'Pet Training',
+      icon: 'home-outline',
+      param: 'service',
+      option: 'pet-training',
+    },
+    {
+      name: 'Pet Grooming',
+      icon: 'home-outline',
+      param: 'service',
+      option: 'pet-grooming',
+    },
+  ];
+
+  public pets: Array<any> = [
+    {
+      name: 'Dog',
+      icon: 'home-outline',
+      param: 'pet',
+      option: 'dog'
+    },
+    {
+      name: 'Cat',
+      icon: 'home-outline',
+      param: 'pet',
+      option: 'cat'
+    },
+    {
+      name: 'Other',
+      icon: 'home-outline',
+      param: 'pet',
+      option: 'other',
     },
   ];
 
   constructor(
     private activeRoute: ActivatedRoute,
+    public router: Router,
     public petsittersService: PetsittersService
     ) {
       this.activeRoute.queryParams.subscribe(params => {
@@ -39,11 +91,17 @@ export class SearchToolbarComponent implements OnInit {
 
   public goToSearch() {
     this.petsittersService.getAll(this.queryParams).then((data: any) => {
-      console.log('data', data, '===', this.queryParams);
+      console.warn('data', data, '===RESULTS===', this.queryParams);
     });
   }
 
-  public test() {
-    console.log('===', this.queryParams);
+  public onOptionsSelected(value: string){
+    this.router.navigate(['/tabs/landing'], {
+      queryParams: {
+      type: value
+     },
+     queryParamsHandling: 'merge',
+     skipLocationChange: true
+    });
   }
 }

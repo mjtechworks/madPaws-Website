@@ -1,12 +1,20 @@
 ion-card {
   border: 1px solid #E1E1E1; 
-  margin: 0 auto;
+  margin: auto;
   padding: 5px 20px;
   position: relative;
   box-sizing: border-box;
-  width: 863px;
+  left: 50%;
+  width: 85%;
+  z-index: 4;
+  margin-left: -495px;
 
   ion-card-content {
     display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    flex-wrap: nowrap;
   }
 }

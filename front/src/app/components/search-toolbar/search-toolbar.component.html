@@ -1,10 +1,24 @@
 <ion-card>
   <ion-card-content>
-    <ion-list *ngFor="let item of services">
-      <a routerLink="/tabs/landing" [queryParams]="{params: item.name}" (click)="test()">
-        <app-option-card name='{{item.name}}' icon='{{item.icon}}'></app-option-card>
-      </a>
-    </ion-list>
+    <div class="row">
+      <ion-list *ngFor="let service of services">
+        <a routerLink="/tabs/landing" [queryParams]="{service: service.option}" queryParamsHandling="merge">
+          <app-option-card name='{{service.name}}' icon='{{service.icon}}'></app-option-card>
+        </a>
+      </ion-list>
+    </div>
+
+    <div class="row">
+      <select class='select-option' 
+        #option 
+        id="pet-select" 
+        name="pets" 
+        (change)='onOptionsSelected(option.value)'>
+          <option value="">--Please choose an option--</option>
+          <option *ngFor="let pet of pets" value="{{pet.option}}">{{pet.name}}</option>
+      </select>
+    </div>
+
     <ion-button class="routing" (click)="goToSearch()">Go To Search</ion-button>
   </ion-card-content>
 </ion-card>
