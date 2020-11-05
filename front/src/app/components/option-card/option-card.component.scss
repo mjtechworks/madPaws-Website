@@ -1,16 +1,17 @@
 ion-card {
-  width: 145px;
-  padding: 8px 0 5px;
-  min-height: 63px;
+  min-width: 136px;
   text-align: center;
 
   ion-card-content {
     display: flex;
     flex-direction: column;
+    font-size: 11px;
+    color: #4A4A4A;
   }
 
   ion-icon {
     margin: 10px auto;
-    font-size: 25px;
+    font-size: 17px;
+    color: #4A4A4A;
   }
 }
