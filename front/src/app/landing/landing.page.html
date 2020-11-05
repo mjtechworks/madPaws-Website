@@ -18,7 +18,8 @@
     </div>
   </div>
     
-  <div class="container mb-4">
+  <div class="container">
+    <app-user-card *ngIf="notFoundMessage && !users.length" name='{{notFoundMessage}}'></app-user-card>
     <ion-list *ngFor="let item of users">
       <app-user-card name='{{ item.firstname }}'></app-user-card>
     </ion-list>
