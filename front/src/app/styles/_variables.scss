@@ -1,0 +1,162 @@
+// Surcharge bootstrap// COLOR FONT
+
+// FONT FAMILY
+$font-family-base: 'Source Sans Pro';
+$font-family-secondary: 'Lato';
+
+$enable-responsive-font-sizes: false;
+
+// COLORS
+$linea-blue: linear-gradient(89.97deg, #0072FF 41.53%, #00C6FF 97.57%);
+$low-blue: #EDF5FF;
+$blue: #0072FF;
+$low-grey: #DDDDDD;
+$dark-grey: #435F6D;
+$dark-blue: #0B2F42;
+$grey: #435F6D;
+$green: #00C17B;
+$low-green: #DEFFF3;
+$red: #C13515;
+$pink: #FF375A;
+$orange: #FFB39B;
+$low-grey-2: #F3F3F3;
+$low-grey-3: #f7f7f7;
+$low-grey-4: #B4BEC3;
+
+$regular: 400;
+$bold: 700;
+$semibold: 600;
+$blackbold: 900;
+
+$primary: $blue;
+$black : $dark-blue;
+$grey-light: $low-grey;
+
+$body-color: $dark-blue;
+$headings-font-weight: 700;
+$shadow-menu: 0px 4px 40px rgba(0, 0, 0, 0.07);
+
+// SIZE FONT
+$font-size-base: 1.125rem; // 18px
+$rfs-base-font-size: 1.125rem; // 18px
+$rfs-font-size-unit: px;
+$line-height-base: 1.33; // 24px
+
+$h1-font-size: 54px;
+$h1-line-height: 56px;
+
+$h2-font-size: 50px;
+$h2-line-height: 63px;
+
+$h3-font-size: 30px;
+$h3-line-height: 38px;
+
+$h4-font-size: 22px;
+$h4-line-height: 32px;
+
+$lead-font-size: 22px;
+$lead-line-height: 32px;
+$lead-font-weight: normal;
+
+$small-font-size: 14px;
+$small-line-height: 18px;
+
+// BOOSTRAP FORM
+$input-bg: #FFF;
+$input-font-size: 16px;
+$input-focus-box-shadow: none;
+$input-btn-font-size: 18px;
+$input-btn-padding-y: 0.75rem;
+$input-btn-padding-x: 0.75rem;
+$input-font-weight: $regular;
+$input-line-height: 1.12; // 20px
+
+// MODAL
+$modal-header-border-width: 0;
+$modal-backdrop-bg: $dark-blue;
+$modal-backdrop-opacity: .77;
+$modal-title-line-height: 1.4rem;
+$modal-content-border-radius: 12px;
+
+// PAGINATION
+$pagination-border-width: 0;
+$pagination-active-color:           $primary;
+$pagination-active-bg:              white;
+$pagination-active-border-color:    transparent;
+$pagination-hover-color:            $primary;
+$pagination-hover-bg:               white;
+$pagination-hover-border-color:     transparent;
+$pagination-focus-box-shadow:       none;
+$pagination-focus-outline:          0;
+
+// BUTTON
+$btn-padding-y:               14px;
+$btn-padding-x:               32px;
+$btn-border-radius:           0.22rem;
+$btn-font-size:               18px;
+$btn-line-height:             20px;
+$btn-font-weight:             700;
+
+$btn-padding-y-sm:            8px;
+$btn-padding-x-sm:            24px;
+$btn-font-size-sm:            16px;
+$btn-font-weight-sm:          700;
+$btn-line-height-sm:          24px;
+$btn-border-radius-sm:        0.16rem;
+
+$btn-padding-y-lg:            18px;
+$btn-padding-x-lg:            32px;
+$btn-font-size-lg:            22px;
+$btn-font-weight-lg:          700;
+$btn-line-height-lg:          32px;
+$btn-border-radius-lg:        0.22rem;
+$btn-disabled-opacity: .2;
+
+// DROPDOWN
+$dropdown-font-size: 16px;
+$dropdown-padding-y: 16px;
+$dropdown-padding-x: 17px;
+$dropdown-item-padding-y: 10px;
+$dropdown-item-padding-x: 16px;
+$dropdown-border-radius: 7px;
+$dropdown-box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+$dropdown-spacer: 8px;
+$dropdown-link-hover-bg: $low-blue;
+$dropdown-link-hover-color: $primary;
+$dropdown-link-active-color: $primary;
+$dropdown-link-active-bg: $low-blue;
+$dropdown-line-height: 20px;
+
+// $spacer
+$space-xs: 4px;
+$space-s: 8px;
+$space-m: 16px;
+$space-l: 24px;
+$space-xl: 32px;
+$space-2xl: 56px;
+$space-3xl: 88px;
+$space-4xl: 144px;
+
+// NAVBAR
+$navbar-nav-link-padding-x: 16px;
+$navbar-dark-color:                 white;
+$navbar-dark-hover-color:           rgba(255, 255, 255, .75);
+$navbar-dark-active-color:          white !default;
+$navbar-dark-disabled-color:        rgba(255, 255, 255, .25);
+$navbar-dark-toggler-icon-bg:       url("/assets/img/icon/burger-menu.svg");
+$navbar-dark-toggler-border-color:  rgba(255, 255, 255, .25);
+
+$navbar-light-color:                $dark-blue;
+$navbar-light-hover-color:          $primary;
+$navbar-light-active-color:         $dark-blue;
+$navbar-light-disabled-color:       rgba($dark-blue, .3) !default;
+$navbar-light-toggler-icon-bg:      url("/assets/img/icon/burger-menu.svg");
+$navbar-light-toggler-border-color: rgba($black, 0);
+
+$height-menu: 80px;
+$height-menu-sm: 64px;
+
+$link-color:                              $primary;
+$link-decoration:                         none;
+$link-hover-color:                        $primary;
+$link-hover-decoration:                   underline;
