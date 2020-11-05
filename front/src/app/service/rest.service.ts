@@ -6,12 +6,10 @@ export class RestService {
 
   constructor(protected http: HttpClient) {}
 
-  public getAll(type: string = 'dog'): Promise<any> {
+  public getAll(options: any = {}): Promise<any> {
 
     return this.http.get(this.baseUrl, {
-      params: {
-        type,
-      }
+      params : options
     }).toPromise();
   }
 
