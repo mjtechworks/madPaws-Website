@@ -1,6 +1,5 @@
-<ion-card>  
-  <ion-card-content>
-    <ion-icon name="{{icon}}"></ion-icon>
-    {{name}}
-  </ion-card-content>
-</ion-card>
+<ion-label
+  class="container-checkbox-button" 
+  [class.checked]="isChecked" 
+>{{name}}</ion-label>
+<ion-checkbox (click)="checkValue($event)" [value]="value"></ion-checkbox>

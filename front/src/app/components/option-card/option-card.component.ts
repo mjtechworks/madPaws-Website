@@ -1,16 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-option-card',
   templateUrl: './option-card.component.html',
   styleUrls: ['./option-card.component.scss'],
 })
-export class OptionCardComponent implements OnInit {
-  @Input() name;
-  @Input() icon;
+export class OptionCardComponent {
+  @Input() name: string;
+  @Input() icon: string;
+  public isChecked = false;
 
-  constructor() { }
-
-  ngOnInit() {}
-
+  checkValue(): void {
+    this.isChecked = !this.isChecked;
+  }
 }

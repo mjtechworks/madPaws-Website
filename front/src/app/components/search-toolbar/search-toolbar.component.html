@@ -1,11 +1,11 @@
 <ion-card>
   <ion-card-content>
     <div class="row">
-      <ion-list *ngFor="let service of services">
+      <ion-item *ngFor="let service of services, let i = index">
         <a routerLink="/tabs/landing" [queryParams]="{service: service.option}" queryParamsHandling="merge">
-          <app-option-card name='{{service.name}}' icon='{{service.icon}}'></app-option-card>
+          <app-option-card [class.checked]="isChecked" name='{{service.name}}'></app-option-card>
         </a>
-      </ion-list>
+      </ion-item>
     </div>
 
     <div class="row">

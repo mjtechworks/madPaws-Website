@@ -8,6 +8,14 @@ ion-card {
   ion-card-content {
     display: flex;
     flex-direction: column;
+
+    ion-item {
+      --border-color: transparent;
+    }
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .row {
