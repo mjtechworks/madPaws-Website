@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PetsittersService } from 'src/app/service/petsitters.service';
 
@@ -11,20 +11,18 @@ export class SearchToolbarComponent {
   @Output() public search: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
   public queryParams = {};
 
-  public data: any;
-
   public services: Array<any> = [
     {
       name: 'Pet Sitting',
       icon: 'home-outline',
       param: 'service',
-      option: 'pet-sitting'
+      option: 'pet-sitting',
     },
     {
       name: 'Pet Hosting',
       icon: 'home-outline',
       param: 'service',
-      option: 'pet-hosting'
+      option: 'pet-hosting',
     },
     {
       name: 'Dog Walking',
@@ -63,13 +61,13 @@ export class SearchToolbarComponent {
       name: 'Dog',
       icon: 'home-outline',
       param: 'pet',
-      option: 'dog'
+      option: 'dog',
     },
     {
       name: 'Cat',
       icon: 'home-outline',
       param: 'pet',
-      option: 'cat'
+      option: 'cat',
     },
     {
       name: 'Other',
@@ -86,7 +84,6 @@ export class SearchToolbarComponent {
     ) {
       this.activeRoute.queryParams.subscribe(params => {
         this.queryParams = params;
-        console.log('params', this.queryParams);
     });
   }
 
@@ -94,9 +91,9 @@ export class SearchToolbarComponent {
     this.router.navigate(['/tabs/landing'], {
       queryParams: {
       type: value
-     },
-     queryParamsHandling: 'merge',
-     skipLocationChange: true
+    },
+      queryParamsHandling: 'merge',
+      skipLocationChange: true,
     });
   }
 }

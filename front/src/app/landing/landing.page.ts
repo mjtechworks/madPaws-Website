@@ -23,8 +23,6 @@ export class LandingPage {
       if (!this.users.length) {
         this.notFoundMessage = 'No users found';
       }
-
-      console.warn('data', this.users, '===RESULTS===', this.searchToolbar.queryParams);
     });
   }
 }
